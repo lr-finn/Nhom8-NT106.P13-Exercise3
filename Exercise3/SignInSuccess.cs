@@ -20,18 +20,18 @@ namespace Exercise3
         {
             try
             {
-                using TcpClient client = new TcpClient(serverIp, serverPort);
+                using TcpClient client = new(serverIp, serverPort);
                 using NetworkStream stream = client.GetStream();
 
                 // Gửi yêu cầu lấy thông tin người dùng
                 string request = $"GETINFO|{username}";
-                byte[] data = Encoding.ASCII.GetBytes(request);
+                byte[] data = Encoding.UTF8.GetBytes(request);
                 await stream.WriteAsync(data, 0, data.Length);
 
                 // Nhận phản hồi từ server
                 byte[] responseBuffer = new byte[1024];
-                int bytesRead = await stream.ReadAsync(responseBuffer, 0, responseBuffer.Length);
-                string response = Encoding.ASCII.GetString(responseBuffer, 0, bytesRead);
+                int bytesRead = await stream.ReadAsync(responseBuffer);
+                string response = Encoding.UTF8.GetString(responseBuffer, 0, bytesRead);
 
                 Console.WriteLine(response);
 

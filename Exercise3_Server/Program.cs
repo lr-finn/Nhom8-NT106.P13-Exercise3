@@ -34,7 +34,7 @@ namespace TCPServerConsole
 
                 while ((bytesRead = await stream.ReadAsync(buffer, 0, buffer.Length)) > 0)
                 {
-                    messageBuilder.Append(Encoding.ASCII.GetString(buffer, 0, bytesRead));
+                    messageBuilder.Append(Encoding.UTF8.GetString(buffer, 0, bytesRead));
                     string message = messageBuilder.ToString();
                     string[] parts = message.Split('|');
 
@@ -60,7 +60,7 @@ namespace TCPServerConsole
                     }
                     else
                     {
-                        byte[] response = Encoding.ASCII.GetBytes("Invalid command");
+                        byte[] response = Encoding.UTF8.GetBytes("Invalid command");
                         await stream.WriteAsync(response, 0, response.Length);
                     }
                 }
@@ -88,11 +88,11 @@ namespace TCPServerConsole
             byte[] response;
             if (reader.HasRows)
             {
-                response = Encoding.ASCII.GetBytes("Login successful");
+                response = Encoding.UTF8.GetBytes("Login successful");
             }
             else
             {
-                response = Encoding.ASCII.GetBytes("Login failed");
+                response = Encoding.UTF8.GetBytes("Login failed");
             }
 
             await stream.WriteAsync(response, 0, response.Length);
@@ -114,8 +114,8 @@ namespace TCPServerConsole
 
             int rowsAffected = await command.ExecuteNonQueryAsync();
             byte[] response = rowsAffected > 0
-                ? Encoding.ASCII.GetBytes("Register successful")
-                : Encoding.ASCII.GetBytes("Register failed");
+                ? Encoding.UTF8.GetBytes("Register successful")
+                : Encoding.UTF8.GetBytes("Register failed");
 
             await stream.WriteAsync(response, 0, response.Length);
         }
@@ -129,8 +129,8 @@ namespace TCPServerConsole
 
             using SqlDataReader reader = await command.ExecuteReaderAsync();
             byte[] response = reader.HasRows
-                ? Encoding.ASCII.GetBytes("Username existed")
-                : Encoding.ASCII.GetBytes("Username does not exist");
+                ? Encoding.UTF8.GetBytes("Username existed")
+                : Encoding.UTF8.GetBytes("Username does not exist");
 
             await stream.WriteAsync(response, 0, response.Length);
         }
@@ -144,8 +144,8 @@ namespace TCPServerConsole
 
             using SqlDataReader reader = await command.ExecuteReaderAsync();
             byte[] response = reader.HasRows
-                ? Encoding.ASCII.GetBytes("Email existed")
-                : Encoding.ASCII.GetBytes("Email does not exist");
+                ? Encoding.UTF8.GetBytes("Email existed")
+                : Encoding.UTF8.GetBytes("Email does not exist");
 
             await stream.WriteAsync(response, 0, response.Length);
         }
@@ -162,11 +162,11 @@ namespace TCPServerConsole
             if (reader.Read())
             {
                 string info = $"{reader["Fullname"]}|{reader["Username"]}|{reader["Email"]}|{reader["Birthday"]}";
-                response = Encoding.ASCII.GetBytes(info);
+                response = Encoding.UTF8.GetBytes(info);
             }
             else
             {
-                response = Encoding.ASCII.GetBytes("User not found");
+                response = Encoding.UTF8.GetBytes("User not found");
             }
 
             await stream.WriteAsync(response, 0, response.Length);
