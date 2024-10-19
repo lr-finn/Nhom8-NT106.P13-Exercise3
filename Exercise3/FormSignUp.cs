@@ -159,7 +159,7 @@ public partial class FormSignUp : Form
 
     private bool IsPasswordLong(string password)
     {
-        if (password.Length < 😎
+        if (password.Length < 8)
         {
             return false;
         }

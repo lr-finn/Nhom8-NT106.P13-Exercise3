@@ -8,7 +8,7 @@ namespace TCPServerConsole
     class Program
     {
         private static TcpListener listener;
-        private static string connectionString = @"Data Source=FINN\SQLEXPRESSS;Initial Catalog=Exercise3;Integrated Security=True;Encrypt=True;Trust Server Certificate=True";
+        private static string connectionString = @"Data Source=FINN\SQLEXPRESSS;Initial Catalog=Exercise3;Integrated Security=True";
 
         static async Task Main(string[] args)
         {
