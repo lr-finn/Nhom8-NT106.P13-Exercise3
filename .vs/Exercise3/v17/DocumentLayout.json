@@ -1,0 +1,88 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\DAI HOC\\NAM 2 - KI 1\\LAP TRINH MANG\\23520122-NguyenGiaBao-exercise3\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F5AC53A0-1777-4FE3-ADCF-FE295B951CBB}|Exercise3\\Exercise3.csproj|d:\\dai hoc\\nam 2 - ki 1\\lap trinh mang\\23520122-nguyengiabao-exercise3\\exercise3\\signinsuccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F5AC53A0-1777-4FE3-ADCF-FE295B951CBB}|Exercise3\\Exercise3.csproj|solutionrelative:exercise3\\signinsuccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5AC53A0-1777-4FE3-ADCF-FE295B951CBB}|Exercise3\\Exercise3.csproj|d:\\dai hoc\\nam 2 - ki 1\\lap trinh mang\\23520122-nguyengiabao-exercise3\\exercise3\\signinsuccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F5AC53A0-1777-4FE3-ADCF-FE295B951CBB}|Exercise3\\Exercise3.csproj|solutionrelative:exercise3\\signinsuccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5AC53A0-1777-4FE3-ADCF-FE295B951CBB}|Exercise3\\Exercise3.csproj|d:\\dai hoc\\nam 2 - ki 1\\lap trinh mang\\23520122-nguyengiabao-exercise3\\exercise3\\signinsuccess.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F5AC53A0-1777-4FE3-ADCF-FE295B951CBB}|Exercise3\\Exercise3.csproj|solutionrelative:exercise3\\signinsuccess.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "SignInSuccess.Designer.cs",
+              "DocumentMoniker": "D:\\DAI HOC\\NAM 2 - KI 1\\LAP TRINH MANG\\23520122-NguyenGiaBao-exercise3\\Exercise3\\SignInSuccess.Designer.cs",
+              "RelativeDocumentMoniker": "Exercise3\\SignInSuccess.Designer.cs",
+              "ToolTip": "D:\\DAI HOC\\NAM 2 - KI 1\\LAP TRINH MANG\\23520122-NguyenGiaBao-exercise3\\Exercise3\\SignInSuccess.Designer.cs",
+              "RelativeToolTip": "Exercise3\\SignInSuccess.Designer.cs",
+              "ViewState": "AgIAAIoAAAAAAAAAAAAYwAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-19T17:33:27.301Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SignInSuccess.cs",
+              "DocumentMoniker": "D:\\DAI HOC\\NAM 2 - KI 1\\LAP TRINH MANG\\23520122-NguyenGiaBao-exercise3\\Exercise3\\SignInSuccess.cs",
+              "RelativeDocumentMoniker": "Exercise3\\SignInSuccess.cs",
+              "ToolTip": "D:\\DAI HOC\\NAM 2 - KI 1\\LAP TRINH MANG\\23520122-NguyenGiaBao-exercise3\\Exercise3\\SignInSuccess.cs",
+              "RelativeToolTip": "Exercise3\\SignInSuccess.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAMAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-19T17:30:09.743Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SignInSuccess.cs [Design]",
+              "DocumentMoniker": "D:\\DAI HOC\\NAM 2 - KI 1\\LAP TRINH MANG\\23520122-NguyenGiaBao-exercise3\\Exercise3\\SignInSuccess.cs",
+              "RelativeDocumentMoniker": "Exercise3\\SignInSuccess.cs",
+              "ToolTip": "D:\\DAI HOC\\NAM 2 - KI 1\\LAP TRINH MANG\\23520122-NguyenGiaBao-exercise3\\Exercise3\\SignInSuccess.cs [Design]",
+              "RelativeToolTip": "Exercise3\\SignInSuccess.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-19T17:29:35.392Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

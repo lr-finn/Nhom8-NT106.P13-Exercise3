@@ -8,19 +8,19 @@
     "net8.0-windows7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\ADMIN\\.nuget\\packages\\": {}
+    "C:\\Users\\GAMING\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ADMIN\\Desktop\\New folder\\Exercise3\\Exercise3\\Exercise3.csproj",
+      "projectUniqueName": "D:\\DAI HOC\\NAM 2 - KI 1\\LAP TRINH MANG\\23520122-NguyenGiaBao-exercise3\\Exercise3\\Exercise3.csproj",
       "projectName": "Exercise3",
-      "projectPath": "C:\\Users\\ADMIN\\Desktop\\New folder\\Exercise3\\Exercise3\\Exercise3.csproj",
-      "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ADMIN\\Desktop\\New folder\\Exercise3\\Exercise3\\obj\\",
+      "projectPath": "D:\\DAI HOC\\NAM 2 - KI 1\\LAP TRINH MANG\\23520122-NguyenGiaBao-exercise3\\Exercise3\\Exercise3.csproj",
+      "packagesPath": "C:\\Users\\GAMING\\.nuget\\packages\\",
+      "outputPath": "D:\\DAI HOC\\NAM 2 - KI 1\\LAP TRINH MANG\\23520122-NguyenGiaBao-exercise3\\Exercise3\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\GAMING\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -70,7 +70,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
