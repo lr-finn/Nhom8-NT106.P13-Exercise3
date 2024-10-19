@@ -1,0 +1,6 @@
+C:\Users\ADMIN\Desktop\New folder\Exercise3\Exercise3\obj\Debug\net8.0-windows\Exercise3.FormSignIn.resources
+C:\Users\ADMIN\Desktop\New folder\Exercise3\Exercise3\obj\Debug\net8.0-windows\Exercise3.csproj.GenerateResource.cache
+C:\Users\ADMIN\Desktop\New folder\Exercise3\Exercise3\obj\Debug\net8.0-windows\Exercise3.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ADMIN\Desktop\New folder\Exercise3\Exercise3\obj\Debug\net8.0-windows\Exercise3.AssemblyInfoInputs.cache
+C:\Users\ADMIN\Desktop\New folder\Exercise3\Exercise3\obj\Debug\net8.0-windows\Exercise3.AssemblyInfo.cs
+C:\Users\ADMIN\Desktop\New folder\Exercise3\Exercise3\obj\Debug\net8.0-windows\Exercise3.csproj.CoreCompileInputs.cache
