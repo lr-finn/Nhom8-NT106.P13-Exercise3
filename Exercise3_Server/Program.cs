@@ -1,7 +1,9 @@
 ﻿using System.Data.SqlClient;
 using System.Net;
+using System.Net.Mail;
 using System.Net.Sockets;
 using System.Text;
+using System.Security.Cryptography;
 
 namespace TCPServerConsole
 {
@@ -57,6 +59,10 @@ namespace TCPServerConsole
                     else if (parts[0] == "GETINFO")
                     {
                         await HandleGetInfo(parts, stream);
+                    }
+                    else if (parts[0] == "RESETPASSWORD")
+                    {
+                        await HandleResetPassword(parts, stream);
                     }
                     else
                     {
@@ -170,6 +176,94 @@ namespace TCPServerConsole
             }
 
             await stream.WriteAsync(response, 0, response.Length);
+        }
+        private static async Task HandleResetPassword(string[] parts, NetworkStream stream)
+        {
+            using SqlConnection connection = new(connectionString);
+            await connection.OpenAsync();
+
+            using SqlCommand command = new("SELECT Email FROM Users WHERE Email = @Email", connection);
+            command.Parameters.AddWithValue("@Email", parts[1]);
+
+            using SqlDataReader reader = await command.ExecuteReaderAsync();
+            byte[] response;
+
+            if (reader.HasRows)
+            {
+                // Email exists, generate new password
+                reader.Close(); // Close the reader to execute a new command
+                string newPassword = GenerateRandomPassword(10);
+                string hashedPassword = HashPassword(newPassword);
+
+                using SqlCommand updateCommand = new("UPDATE Users SET HashedPass = @HashedPass WHERE Email = @Email", connection);
+                updateCommand.Parameters.AddWithValue("@HashedPass", hashedPassword);
+                updateCommand.Parameters.AddWithValue("@Email", parts[1]);
+
+                int rowsUpdated = await updateCommand.ExecuteNonQueryAsync();
+
+                if (rowsUpdated > 0)
+                {
+                    // Send email with the new password
+                    bool emailSent = await SendResetPasswordEmail(parts[1], newPassword);
+                    response = emailSent
+                        ? Encoding.UTF8.GetBytes("Password reset successful, check your email")
+                        : Encoding.UTF8.GetBytes("Password reset failed, unable to send email");
+                }
+                else
+                {
+                    response = Encoding.UTF8.GetBytes("Password reset failed");
+                }
+            }
+            else
+            {
+                response = Encoding.UTF8.GetBytes("Email does not exist");
+            }
+
+            await stream.WriteAsync(response, 0, response.Length);
+        }
+
+        private static string GenerateRandomPassword(int length)
+        {
+            const string validChars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+            Random random = new();
+            return new string(Enumerable.Repeat(validChars, length)
+                                        .Select(s => s[random.Next(s.Length)]).ToArray());
+        }
+
+        private static string HashPassword(string password)
+        {
+            // Add your hashing logic (e.g., SHA256 or bcrypt)
+            byte[] hashedBytes = SHA256.HashData(Encoding.UTF8.GetBytes(password));
+            string hashedpass = BitConverter.ToString(hashedBytes).Replace("-", "").ToLower();
+            return hashedpass;
+        }
+        private static async Task<bool> SendResetPasswordEmail(string email, string newPassword)
+        {
+            try
+            {
+                using SmtpClient smtpClient = new("smtp.gmail.com", 587)
+                {
+                    Credentials = new NetworkCredential("finnlor123@gmail.com", "gnsx qqhr ffet rztj"),
+                    EnableSsl = true
+                };
+
+                using MailMessage mail = new()
+                {
+                    From = new MailAddress("finnlor123@gmail.com"),
+                    Subject = "Password Reset Request",
+                    Body = $"Your new password is: {newPassword}",
+                    IsBodyHtml = false
+                };
+
+                mail.To.Add(email);
+                await smtpClient.SendMailAsync(mail);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Failed to send email: {ex.Message}");
+                return false;
+            }
         }
     }
 }
