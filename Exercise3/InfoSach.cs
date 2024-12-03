@@ -236,8 +236,7 @@ namespace Exercise3
                 MessageBox.Show($"Lỗi khi thêm sách vào kệ: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-        private async void btnAddToShelf_Click(object sender, EventArgs e)
+        private void btnAddToShelf_Click(object sender, EventArgs e)
         {
             if (dgvBookShelves.SelectedRows.Count > 0)
             {
@@ -258,7 +257,6 @@ namespace Exercise3
                 MessageBox.Show("Vui lòng chọn một kệ sách.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
-
         private void dgvBookShelves_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -277,6 +275,5 @@ namespace Exercise3
                 }
             }
         }
-
     }
 }

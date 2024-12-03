@@ -10,5 +10,11 @@
     <Compile Update="InfoSach.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="ListBookslnShelf.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="TimSach.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
 </Project>

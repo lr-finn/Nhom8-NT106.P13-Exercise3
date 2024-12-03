@@ -28,94 +28,96 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.rtbBookDetails = new System.Windows.Forms.RichTextBox();
-            this.btnAddToShelf = new System.Windows.Forms.Button();
-            this.progressBar = new System.Windows.Forms.ProgressBar();
-            this.dgvBookShelves = new System.Windows.Forms.DataGridView();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvBookShelves)).BeginInit();
-            this.SuspendLayout();
+            rtbBookDetails = new RichTextBox();
+            btnAddToShelf = new Button();
+            progressBar = new ProgressBar();
+            dgvBookShelves = new DataGridView();
+            Column3 = new DataGridViewTextBoxColumn();
+            Column1 = new DataGridViewTextBoxColumn();
+            Column2 = new DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)dgvBookShelves).BeginInit();
+            SuspendLayout();
             // 
             // rtbBookDetails
             // 
-            this.rtbBookDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtbBookDetails.Location = new System.Drawing.Point(12, 12);
-            this.rtbBookDetails.Name = "rtbBookDetails";
-            this.rtbBookDetails.Size = new System.Drawing.Size(975, 355);
-            this.rtbBookDetails.TabIndex = 0;
-            this.rtbBookDetails.Text = "";
+            rtbBookDetails.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            rtbBookDetails.Location = new Point(12, 15);
+            rtbBookDetails.Margin = new Padding(3, 4, 3, 4);
+            rtbBookDetails.Name = "rtbBookDetails";
+            rtbBookDetails.Size = new Size(975, 443);
+            rtbBookDetails.TabIndex = 0;
+            rtbBookDetails.Text = "";
             // 
             // btnAddToShelf
             // 
-            this.btnAddToShelf.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.btnAddToShelf.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddToShelf.Location = new System.Drawing.Point(12, 383);
-            this.btnAddToShelf.Name = "btnAddToShelf";
-            this.btnAddToShelf.Size = new System.Drawing.Size(163, 56);
-            this.btnAddToShelf.TabIndex = 1;
-            this.btnAddToShelf.Text = "Thêm vào kệ sách";
-            this.btnAddToShelf.UseVisualStyleBackColor = false;
+            btnAddToShelf.BackColor = Color.FromArgb(255, 224, 192);
+            btnAddToShelf.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnAddToShelf.Location = new Point(12, 479);
+            btnAddToShelf.Margin = new Padding(3, 4, 3, 4);
+            btnAddToShelf.Name = "btnAddToShelf";
+            btnAddToShelf.Size = new Size(163, 70);
+            btnAddToShelf.TabIndex = 1;
+            btnAddToShelf.Text = "Thêm vào kệ sách";
+            btnAddToShelf.UseVisualStyleBackColor = false;
+            btnAddToShelf.Click += btnAddToShelf_Click;
             // 
             // progressBar
             // 
-            this.progressBar.Location = new System.Drawing.Point(607, 401);
-            this.progressBar.Name = "progressBar";
-            this.progressBar.Size = new System.Drawing.Size(380, 27);
-            this.progressBar.TabIndex = 3;
+            progressBar.Location = new Point(607, 501);
+            progressBar.Margin = new Padding(3, 4, 3, 4);
+            progressBar.Name = "progressBar";
+            progressBar.Size = new Size(380, 34);
+            progressBar.TabIndex = 3;
             // 
             // dgvBookShelves
             // 
-            this.dgvBookShelves.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvBookShelves.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column3,
-            this.Column1,
-            this.Column2});
-            this.dgvBookShelves.Location = new System.Drawing.Point(12, 457);
-            this.dgvBookShelves.Name = "dgvBookShelves";
-            this.dgvBookShelves.RowHeadersWidth = 51;
-            this.dgvBookShelves.RowTemplate.Height = 24;
-            this.dgvBookShelves.Size = new System.Drawing.Size(975, 266);
-            this.dgvBookShelves.TabIndex = 4;
-            this.dgvBookShelves.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBookShelves_CellDoubleClick);
+            dgvBookShelves.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvBookShelves.Columns.AddRange(new DataGridViewColumn[] { Column3, Column1, Column2 });
+            dgvBookShelves.Location = new Point(12, 571);
+            dgvBookShelves.Margin = new Padding(3, 4, 3, 4);
+            dgvBookShelves.Name = "dgvBookShelves";
+            dgvBookShelves.RowHeadersWidth = 51;
+            dgvBookShelves.RowTemplate.Height = 24;
+            dgvBookShelves.Size = new Size(975, 332);
+            dgvBookShelves.TabIndex = 4;
+            dgvBookShelves.CellDoubleClick += dgvBookShelves_CellDoubleClick;
             // 
             // Column3
             // 
-            this.Column3.HeaderText = "ID";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 125;
+            Column3.HeaderText = "ID";
+            Column3.MinimumWidth = 6;
+            Column3.Name = "Column3";
+            Column3.Width = 125;
             // 
             // Column1
             // 
-            this.Column1.HeaderText = "tên kệ sách";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 200;
+            Column1.HeaderText = "tên kệ sách";
+            Column1.MinimumWidth = 6;
+            Column1.Name = "Column1";
+            Column1.Width = 200;
             // 
             // Column2
             // 
-            this.Column2.HeaderText = "Mô tả";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 700;
+            Column2.HeaderText = "Mô tả";
+            Column2.MinimumWidth = 6;
+            Column2.Name = "Column2";
+            Column2.Width = 700;
             // 
             // InfoSach
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(998, 735);
-            this.Controls.Add(this.dgvBookShelves);
-            this.Controls.Add(this.progressBar);
-            this.Controls.Add(this.btnAddToShelf);
-            this.Controls.Add(this.rtbBookDetails);
-            this.Name = "InfoSach";
-            this.Text = "Thông tin sách";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvBookShelves)).EndInit();
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
+            ClientSize = new Size(998, 919);
+            Controls.Add(dgvBookShelves);
+            Controls.Add(progressBar);
+            Controls.Add(btnAddToShelf);
+            Controls.Add(rtbBookDetails);
+            Margin = new Padding(3, 4, 3, 4);
+            Name = "InfoSach";
+            Text = "Thông tin sách";
+            ((System.ComponentModel.ISupportInitialize)dgvBookShelves).EndInit();
+            ResumeLayout(false);
         }
 
         #endregion
