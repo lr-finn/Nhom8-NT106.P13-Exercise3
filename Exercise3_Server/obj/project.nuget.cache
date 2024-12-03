@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "OgMxXPmm/Q0=",
+  "dgSpecHash": "P2pDYRyfdE8=",
   "success": true,
-  "projectFilePath": "C:\\Users\\ADMIN\\Desktop\\New folder (2)\\Nhom8-NT106.P13-Exercise3\\Exercise3_Server\\Exercise3_Server.csproj",
+  "projectFilePath": "C:\\Users\\ADMIN\\Desktop\\Ex3\\Nhom8-NT106.P13-Exercise3\\Exercise3_Server\\Exercise3_Server.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ADMIN\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\ADMIN\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
