@@ -1,0 +1,7 @@
+/.vs
+obj/
+bin/
+.vs/
+/packages
+client_secret.json
+credentials.json
