@@ -30,10 +30,9 @@ public partial class FormSignIn : Form
         string respond = SendRequestToServer(loginCommand);
         if (respond == "Login successful")
         {
-            MessageBox.Show("Login successful");
-            SignInSuccess signInSuccess = new SignInSuccess(username);
-            signInSuccess.Show();
-            signInSuccess.FormClosed += (_, _) => this.Show();
+            TimSach timSach = new TimSach();
+            timSach.Show();
+            timSach.FormClosed += (_, _) => this.Show();
             this.Hide();
         }
         else

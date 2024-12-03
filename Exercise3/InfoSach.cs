@@ -236,7 +236,7 @@ namespace Exercise3
                 MessageBox.Show($"Lỗi khi thêm sách vào kệ: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        private void btnAddToShelf_Click(object sender, EventArgs e)
+        private async void btnAddToShelf_Click(object sender, EventArgs e)
         {
             if (dgvBookShelves.SelectedRows.Count > 0)
             {
