@@ -7,8 +7,5 @@
     <Compile Update="FormSignUp.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="SignInSuccess.cs">
-      <SubType>Form</SubType>
-    </Compile>
   </ItemGroup>
 </Project>
