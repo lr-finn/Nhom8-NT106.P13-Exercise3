@@ -43,6 +43,7 @@ partial class FormSignIn
         label3 = new Label();
         LB_UserNameExisted = new Label();
         LB_CautionLogin = new Label();
+        lbForgotPassword = new Label();
         SuspendLayout();
         // 
         // label1
@@ -101,7 +102,7 @@ partial class FormSignIn
         BT_SignIn.BackColor = Color.FromArgb(76, 192, 165);
         BT_SignIn.Font = new Font("Montserrat", 13.7999992F, FontStyle.Bold, GraphicsUnit.Point, 163);
         BT_SignIn.ForeColor = Color.White;
-        BT_SignIn.Location = new Point(148, 340);
+        BT_SignIn.Location = new Point(148, 348);
         BT_SignIn.Name = "BT_SignIn";
         BT_SignIn.Size = new Size(266, 52);
         BT_SignIn.TabIndex = 3;
@@ -114,7 +115,7 @@ partial class FormSignIn
         LB_SignUp.AutoSize = true;
         LB_SignUp.Font = new Font("Montserrat", 12F, FontStyle.Bold, GraphicsUnit.Point, 163);
         LB_SignUp.ForeColor = Color.FromArgb(104, 202, 167);
-        LB_SignUp.Location = new Point(373, 411);
+        LB_SignUp.Location = new Point(373, 419);
         LB_SignUp.Name = "LB_SignUp";
         LB_SignUp.Size = new Size(95, 27);
         LB_SignUp.TabIndex = 4;
@@ -127,7 +128,7 @@ partial class FormSignIn
         // 
         label3.AutoSize = true;
         label3.Font = new Font("Montserrat", 12F, FontStyle.Regular, GraphicsUnit.Point, 163);
-        label3.Location = new Point(116, 411);
+        label3.Location = new Point(116, 419);
         label3.Name = "label3";
         label3.Size = new Size(251, 27);
         label3.TabIndex = 5;
@@ -156,6 +157,20 @@ partial class FormSignIn
         LB_CautionLogin.Text = "* Incorrect username or password. Please try again.";
         LB_CautionLogin.Visible = false;
         // 
+        // lbForgotPassword
+        // 
+        lbForgotPassword.AutoSize = true;
+        lbForgotPassword.Font = new Font("Montserrat", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 163);
+        lbForgotPassword.ForeColor = Color.Black;
+        lbForgotPassword.Location = new Point(275, 312);
+        lbForgotPassword.Name = "lbForgotPassword";
+        lbForgotPassword.Size = new Size(209, 24);
+        lbForgotPassword.TabIndex = 15;
+        lbForgotPassword.Text = "Forgot Your Password?";
+        lbForgotPassword.Click += lbForgotPassword_Click;
+        lbForgotPassword.MouseEnter += lbForgotPassword_MouseEnter;
+        lbForgotPassword.MouseLeave += lbForgotPassword_MouseLeave;
+        // 
         // FormSignIn
         // 
         AutoScaleDimensions = new SizeF(8F, 20F);
@@ -163,6 +178,7 @@ partial class FormSignIn
         BackColor = Color.White;
         BackgroundImageLayout = ImageLayout.None;
         ClientSize = new Size(582, 503);
+        Controls.Add(lbForgotPassword);
         Controls.Add(LB_CautionLogin);
         Controls.Add(LB_UserNameExisted);
         Controls.Add(label3);
@@ -193,4 +209,5 @@ partial class FormSignIn
     private Label label3;
     private Label LB_UserNameExisted;
     private Label LB_CautionLogin;
+    private Label lbForgotPassword;
 }

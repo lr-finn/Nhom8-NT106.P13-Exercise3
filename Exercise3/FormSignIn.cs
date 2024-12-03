@@ -76,5 +76,21 @@ public partial class FormSignIn : Form
     {
         LB_SignUp.ForeColor = Color.FromArgb(76, 192, 165);
     }
+
+    private void lbForgotPassword_Click(object sender, EventArgs e)
+    {
+        ForgotPassword forgotPassword = new ForgotPassword();
+        forgotPassword.Show();
+        forgotPassword.FormClosed += (_, _) => this.Show();
+        this.Hide();
+    }
+    private void lbForgotPassword_MouseEnter(object sender, EventArgs e)
+    {
+        lbForgotPassword.ForeColor = Color.FromArgb(76, 192, 165);
+    }
+    private void lbForgotPassword_MouseLeave(object sender, EventArgs e)
+    {
+        lbForgotPassword.ForeColor = Color.FromArgb(0, 0, 0);
+    }
 }
 
