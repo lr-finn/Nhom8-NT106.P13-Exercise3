@@ -67,12 +67,6 @@ namespace Exercise3
             string changePasswordCommand = $"CHANGEPASSWORD|{username}|{hashedOldPass}|{hashedNewPass}";
             string response = SendRequestToServer(changePasswordCommand);
 
-            if (response != "Password correct")
-            {
-                LB_WrongPassword.Visible = true;
-                validSignUp = false;
-            }
-
             if (!validSignUp) return;
 
             if (response == "Password changed successfully")
