@@ -56,6 +56,10 @@ namespace TCPServerConsole
                     {
                         await HandleCheckEmail(parts, stream);
                     }
+                    else if (parts[0] == "CHECKPASSWORD")
+                    {
+                        await HandleCheckPassword(parts, stream);
+                    }
                     else if (parts[0] == "GETINFO")
                     {
                         await HandleGetInfo(parts, stream);
@@ -293,6 +297,33 @@ namespace TCPServerConsole
                 response = rowsAffected > 0
                     ? Encoding.UTF8.GetBytes("Password changed successfully")
                     : Encoding.UTF8.GetBytes("Password change failed");
+            }
+
+            await stream.WriteAsync(response, 0, response.Length);
+        }
+        private static async Task HandleCheckPassword(string[] parts, NetworkStream stream)
+        {
+            string username = parts[1];
+            string hashedOldPass = parts[2];
+
+            using SqlConnection connection = new(connectionString);
+            await connection.OpenAsync();
+
+            // Kiểm tra mật khẩu
+            using SqlCommand checkCommand = new("SELECT * FROM Users WHERE Username = @Username AND HashedPass = @OldPass", connection);
+            checkCommand.Parameters.AddWithValue("@Username", username);
+            checkCommand.Parameters.AddWithValue("@OldPass", hashedOldPass);
+
+            using SqlDataReader reader = await checkCommand.ExecuteReaderAsync();
+            byte[] response;
+
+            if (reader.HasRows)
+            {
+                response = Encoding.UTF8.GetBytes("Password correct");
+            }
+            else
+            {
+                response = Encoding.UTF8.GetBytes("Password incorrect");
             }
 
             await stream.WriteAsync(response, 0, response.Length);
