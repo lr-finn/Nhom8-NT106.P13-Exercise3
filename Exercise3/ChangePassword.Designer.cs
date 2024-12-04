@@ -40,6 +40,9 @@
             label2 = new Label();
             lbChange = new Label();
             LB_WrongPassword = new Label();
+            LB_CautionUserName = new Label();
+            TB_UserName = new TextBox();
+            LB_UserName = new Label();
             SuspendLayout();
             // 
             // BT_Confirm
@@ -47,7 +50,7 @@
             BT_Confirm.BackColor = Color.FromArgb(64, 112, 244);
             BT_Confirm.Font = new Font("Microsoft Sans Serif", 13.7999992F, FontStyle.Bold, GraphicsUnit.Point, 163);
             BT_Confirm.ForeColor = Color.White;
-            BT_Confirm.Location = new Point(223, 476);
+            BT_Confirm.Location = new Point(220, 558);
             BT_Confirm.Name = "BT_Confirm";
             BT_Confirm.Size = new Size(190, 52);
             BT_Confirm.TabIndex = 20;
@@ -60,7 +63,7 @@
             LB_DidntMatch.AutoSize = true;
             LB_DidntMatch.Font = new Font("Microsoft Sans Serif", 7.79999971F, FontStyle.Italic, GraphicsUnit.Point, 163);
             LB_DidntMatch.ForeColor = Color.Red;
-            LB_DidntMatch.Location = new Point(113, 403);
+            LB_DidntMatch.Location = new Point(98, 507);
             LB_DidntMatch.Name = "LB_DidntMatch";
             LB_DidntMatch.Size = new Size(263, 16);
             LB_DidntMatch.TabIndex = 25;
@@ -72,7 +75,7 @@
             LB_CautionConfirmNewPass.AutoSize = true;
             LB_CautionConfirmNewPass.Font = new Font("Microsoft Sans Serif", 7.79999971F, FontStyle.Italic, GraphicsUnit.Point, 163);
             LB_CautionConfirmNewPass.ForeColor = Color.Red;
-            LB_CautionConfirmNewPass.Location = new Point(113, 405);
+            LB_CautionConfirmNewPass.Location = new Point(98, 509);
             LB_CautionConfirmNewPass.Name = "LB_CautionConfirmNewPass";
             LB_CautionConfirmNewPass.Size = new Size(154, 16);
             LB_CautionConfirmNewPass.TabIndex = 26;
@@ -84,7 +87,7 @@
             LB_CautionNewPass.AutoSize = true;
             LB_CautionNewPass.Font = new Font("Microsoft Sans Serif", 7.79999971F, FontStyle.Italic, GraphicsUnit.Point, 163);
             LB_CautionNewPass.ForeColor = Color.Red;
-            LB_CautionNewPass.Location = new Point(114, 296);
+            LB_CautionNewPass.Location = new Point(99, 400);
             LB_CautionNewPass.Name = "LB_CautionNewPass";
             LB_CautionNewPass.Size = new Size(274, 16);
             LB_CautionNewPass.TabIndex = 27;
@@ -95,7 +98,7 @@
             // 
             TB_ConfirmPass.BackColor = Color.White;
             TB_ConfirmPass.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 163);
-            TB_ConfirmPass.Location = new Point(113, 370);
+            TB_ConfirmPass.Location = new Point(98, 474);
             TB_ConfirmPass.Name = "TB_ConfirmPass";
             TB_ConfirmPass.PasswordChar = '*';
             TB_ConfirmPass.Size = new Size(420, 30);
@@ -105,7 +108,7 @@
             // 
             LB_Confirm.AutoSize = true;
             LB_Confirm.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 163);
-            LB_Confirm.Location = new Point(113, 329);
+            LB_Confirm.Location = new Point(98, 433);
             LB_Confirm.Name = "LB_Confirm";
             LB_Confirm.Size = new Size(171, 25);
             LB_Confirm.TabIndex = 21;
@@ -115,7 +118,7 @@
             // 
             TB_NewPass.BackColor = Color.White;
             TB_NewPass.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 163);
-            TB_NewPass.Location = new Point(113, 263);
+            TB_NewPass.Location = new Point(98, 367);
             TB_NewPass.Name = "TB_NewPass";
             TB_NewPass.PasswordChar = '*';
             TB_NewPass.Size = new Size(420, 30);
@@ -125,7 +128,7 @@
             // 
             LB_Pass.AutoSize = true;
             LB_Pass.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 163);
-            LB_Pass.Location = new Point(113, 222);
+            LB_Pass.Location = new Point(98, 326);
             LB_Pass.Name = "LB_Pass";
             LB_Pass.Size = new Size(142, 25);
             LB_Pass.TabIndex = 22;
@@ -135,7 +138,7 @@
             // 
             TB_Pass.BackColor = Color.White;
             TB_Pass.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 163);
-            TB_Pass.Location = new Point(114, 147);
+            TB_Pass.Location = new Point(99, 251);
             TB_Pass.Name = "TB_Pass";
             TB_Pass.PasswordChar = '*';
             TB_Pass.Size = new Size(420, 30);
@@ -145,7 +148,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 163);
-            label2.Location = new Point(114, 106);
+            label2.Location = new Point(99, 212);
             label2.Name = "label2";
             label2.Size = new Size(98, 25);
             label2.TabIndex = 28;
@@ -168,18 +171,52 @@
             LB_WrongPassword.AutoSize = true;
             LB_WrongPassword.Font = new Font("Microsoft Sans Serif", 7.79999971F, FontStyle.Italic, GraphicsUnit.Point, 163);
             LB_WrongPassword.ForeColor = Color.Red;
-            LB_WrongPassword.Location = new Point(113, 182);
+            LB_WrongPassword.Location = new Point(98, 286);
             LB_WrongPassword.Name = "LB_WrongPassword";
             LB_WrongPassword.Size = new Size(118, 16);
             LB_WrongPassword.TabIndex = 30;
             LB_WrongPassword.Text = "* Wrong Password";
             LB_WrongPassword.Visible = false;
             // 
+            // LB_CautionUserName
+            // 
+            LB_CautionUserName.AutoSize = true;
+            LB_CautionUserName.Font = new Font("Microsoft Sans Serif", 7.79999971F, FontStyle.Italic, GraphicsUnit.Point, 163);
+            LB_CautionUserName.ForeColor = Color.Red;
+            LB_CautionUserName.Location = new Point(99, 185);
+            LB_CautionUserName.Name = "LB_CautionUserName";
+            LB_CautionUserName.Size = new Size(118, 16);
+            LB_CautionUserName.TabIndex = 35;
+            LB_CautionUserName.Text = "* Enter User Name";
+            LB_CautionUserName.Visible = false;
+            // 
+            // TB_UserName
+            // 
+            TB_UserName.BackColor = Color.White;
+            TB_UserName.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 163);
+            TB_UserName.Location = new Point(99, 150);
+            TB_UserName.Name = "TB_UserName";
+            TB_UserName.Size = new Size(420, 30);
+            TB_UserName.TabIndex = 33;
+            // 
+            // LB_UserName
+            // 
+            LB_UserName.AutoSize = true;
+            LB_UserName.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 163);
+            LB_UserName.Location = new Point(99, 109);
+            LB_UserName.Name = "LB_UserName";
+            LB_UserName.Size = new Size(102, 25);
+            LB_UserName.TabIndex = 32;
+            LB_UserName.Text = "Username";
+            // 
             // ChangePassword
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(669, 566);
+            ClientSize = new Size(665, 636);
+            Controls.Add(LB_CautionUserName);
+            Controls.Add(TB_UserName);
+            Controls.Add(LB_UserName);
             Controls.Add(lbChange);
             Controls.Add(LB_WrongPassword);
             Controls.Add(TB_Pass);
@@ -212,5 +249,8 @@
         private Label label2;
         private Label lbChange;
         private Label LB_WrongPassword;
+        private Label LB_CautionUserName;
+        private TextBox TB_UserName;
+        private Label LB_UserName;
     }
 }

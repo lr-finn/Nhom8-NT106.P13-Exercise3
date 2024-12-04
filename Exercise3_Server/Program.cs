@@ -64,11 +64,16 @@ namespace TCPServerConsole
                     {
                         await HandleResetPassword(parts, stream);
                     }
+                    else if (parts[0] == "CHANGEPASSWORD")
+                    {
+                        await HandleChangePassword(parts, stream);
+                    }
                     else
                     {
                         byte[] response = Encoding.UTF8.GetBytes("Invalid command");
                         await stream.WriteAsync(response, 0, response.Length);
                     }
+                   
                 }
             }
             catch (Exception ex)
@@ -252,6 +257,45 @@ namespace TCPServerConsole
             {
                 Console.WriteLine($"Failed to send email: {ex.Message}");
             }
+        }
+        private static async Task HandleChangePassword(string[] parts, NetworkStream stream)
+        {
+            string username = parts[1];
+            string oldHashedPass = parts[2];
+            string newHashedPass = parts[3];
+
+            using SqlConnection connection = new(connectionString);
+            await connection.OpenAsync();
+
+            // Kiểm tra mật khẩu cũ
+            using SqlCommand checkCommand = new("SELECT * FROM Users WHERE Username = @Username AND HashedPass = @OldPass", connection);
+            checkCommand.Parameters.AddWithValue("@Username", username);
+            checkCommand.Parameters.AddWithValue("@OldPass", oldHashedPass);
+
+            using SqlDataReader reader = await checkCommand.ExecuteReaderAsync();
+            byte[] response;
+
+            if (!reader.HasRows)
+            {
+                // Mật khẩu cũ không đúng
+                response = Encoding.UTF8.GetBytes("Old password is incorrect");
+            }
+            else
+            {
+                reader.Close(); // Đóng reader trước khi thực hiện lệnh cập nhật
+
+                // Cập nhật mật khẩu mới
+                using SqlCommand updateCommand = new("UPDATE Users SET HashedPass = @NewPass WHERE Username = @Username", connection);
+                updateCommand.Parameters.AddWithValue("@NewPass", newHashedPass);
+                updateCommand.Parameters.AddWithValue("@Username", username);
+
+                int rowsAffected = await updateCommand.ExecuteNonQueryAsync();
+                response = rowsAffected > 0
+                    ? Encoding.UTF8.GetBytes("Password changed successfully")
+                    : Encoding.UTF8.GetBytes("Password change failed");
+            }
+
+            await stream.WriteAsync(response, 0, response.Length);
         }
     }
 }
