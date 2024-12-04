@@ -92,5 +92,12 @@ public partial class FormSignIn : Form
     {
         lbForgotPassword.ForeColor = Color.FromArgb(0, 0, 0);
     }
+    private void lbChangePassword_Click(object sender, EventArgs e)
+    {
+        ChangePassword changePassword = new ChangePassword();
+        changePassword.Show();
+        changePassword.FormClosed += (_, _) => this.Show();
+        this.Hide();
+    }
 }
 

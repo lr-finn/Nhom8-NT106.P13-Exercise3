@@ -30,8 +30,8 @@
         {
             BT_Confirm = new Button();
             LB_DidntMatch = new Label();
-            LB_CautionConfirmPass = new Label();
-            LB_CautionPass = new Label();
+            LB_CautionConfirmNewPass = new Label();
+            LB_CautionNewPass = new Label();
             TB_ConfirmPass = new TextBox();
             LB_Confirm = new Label();
             TB_NewPass = new TextBox();
@@ -60,36 +60,36 @@
             LB_DidntMatch.AutoSize = true;
             LB_DidntMatch.Font = new Font("Microsoft Sans Serif", 7.79999971F, FontStyle.Italic, GraphicsUnit.Point, 163);
             LB_DidntMatch.ForeColor = Color.Red;
-            LB_DidntMatch.Location = new Point(113, 405);
+            LB_DidntMatch.Location = new Point(113, 403);
             LB_DidntMatch.Name = "LB_DidntMatch";
             LB_DidntMatch.Size = new Size(263, 16);
             LB_DidntMatch.TabIndex = 25;
             LB_DidntMatch.Text = "* Those passwords didn’t match. Try again.";
             LB_DidntMatch.Visible = false;
             // 
-            // LB_CautionConfirmPass
+            // LB_CautionConfirmNewPass
             // 
-            LB_CautionConfirmPass.AutoSize = true;
-            LB_CautionConfirmPass.Font = new Font("Microsoft Sans Serif", 7.79999971F, FontStyle.Italic, GraphicsUnit.Point, 163);
-            LB_CautionConfirmPass.ForeColor = Color.Red;
-            LB_CautionConfirmPass.Location = new Point(113, 405);
-            LB_CautionConfirmPass.Name = "LB_CautionConfirmPass";
-            LB_CautionConfirmPass.Size = new Size(154, 16);
-            LB_CautionConfirmPass.TabIndex = 26;
-            LB_CautionConfirmPass.Text = "* Confirm Your Password";
-            LB_CautionConfirmPass.Visible = false;
+            LB_CautionConfirmNewPass.AutoSize = true;
+            LB_CautionConfirmNewPass.Font = new Font("Microsoft Sans Serif", 7.79999971F, FontStyle.Italic, GraphicsUnit.Point, 163);
+            LB_CautionConfirmNewPass.ForeColor = Color.Red;
+            LB_CautionConfirmNewPass.Location = new Point(113, 405);
+            LB_CautionConfirmNewPass.Name = "LB_CautionConfirmNewPass";
+            LB_CautionConfirmNewPass.Size = new Size(154, 16);
+            LB_CautionConfirmNewPass.TabIndex = 26;
+            LB_CautionConfirmNewPass.Text = "* Confirm Your Password";
+            LB_CautionConfirmNewPass.Visible = false;
             // 
-            // LB_CautionPass
+            // LB_CautionNewPass
             // 
-            LB_CautionPass.AutoSize = true;
-            LB_CautionPass.Font = new Font("Microsoft Sans Serif", 7.79999971F, FontStyle.Italic, GraphicsUnit.Point, 163);
-            LB_CautionPass.ForeColor = Color.Red;
-            LB_CautionPass.Location = new Point(114, 296);
-            LB_CautionPass.Name = "LB_CautionPass";
-            LB_CautionPass.Size = new Size(274, 16);
-            LB_CautionPass.TabIndex = 27;
-            LB_CautionPass.Text = "* Use 8 characters or more for your password";
-            LB_CautionPass.Visible = false;
+            LB_CautionNewPass.AutoSize = true;
+            LB_CautionNewPass.Font = new Font("Microsoft Sans Serif", 7.79999971F, FontStyle.Italic, GraphicsUnit.Point, 163);
+            LB_CautionNewPass.ForeColor = Color.Red;
+            LB_CautionNewPass.Location = new Point(114, 296);
+            LB_CautionNewPass.Name = "LB_CautionNewPass";
+            LB_CautionNewPass.Size = new Size(274, 16);
+            LB_CautionNewPass.TabIndex = 27;
+            LB_CautionNewPass.Text = "* Use 8 characters or more for your password";
+            LB_CautionNewPass.Visible = false;
             // 
             // TB_ConfirmPass
             // 
@@ -185,8 +185,8 @@
             Controls.Add(TB_Pass);
             Controls.Add(label2);
             Controls.Add(LB_DidntMatch);
-            Controls.Add(LB_CautionConfirmPass);
-            Controls.Add(LB_CautionPass);
+            Controls.Add(LB_CautionConfirmNewPass);
+            Controls.Add(LB_CautionNewPass);
             Controls.Add(TB_ConfirmPass);
             Controls.Add(LB_Confirm);
             Controls.Add(TB_NewPass);
@@ -202,8 +202,8 @@
 
         private Button BT_Confirm;
         private Label LB_DidntMatch;
-        private Label LB_CautionConfirmPass;
-        private Label LB_CautionPass;
+        private Label LB_CautionConfirmNewPass;
+        private Label LB_CautionNewPass;
         private TextBox TB_ConfirmPass;
         private Label LB_Confirm;
         private TextBox TB_NewPass;
