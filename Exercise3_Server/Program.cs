@@ -199,27 +199,15 @@ namespace TCPServerConsole
                 updateCommand.Parameters.AddWithValue("@HashedPass", hashedPassword);
                 updateCommand.Parameters.AddWithValue("@Email", parts[1]);
 
+                await SendResetPasswordEmail(parts[1], newPassword);
                 int rowsUpdated = await updateCommand.ExecuteNonQueryAsync();
 
-                if (rowsUpdated > 0)
-                {
-                    // Send email with the new password
-                    bool emailSent = await SendResetPasswordEmail(parts[1], newPassword);
-                    response = emailSent
-                        ? Encoding.UTF8.GetBytes("Password reset successful, check your email")
-                        : Encoding.UTF8.GetBytes("Password reset failed, unable to send email");
-                }
-                else
-                {
-                    response = Encoding.UTF8.GetBytes("Password reset failed");
-                }
-            }
-            else
-            {
-                response = Encoding.UTF8.GetBytes("Email does not exist");
-            }
+                byte[] response1 = rowsUpdated > 0
+                    ? Encoding.UTF8.GetBytes("Password reset successful")
+                    : Encoding.UTF8.GetBytes("Password reset failed");
 
-            await stream.WriteAsync(response, 0, response.Length);
+                await stream.WriteAsync(response1, 0, response1.Length);
+            }
         }
 
         private static string GenerateRandomPassword(int length)
@@ -237,17 +225,19 @@ namespace TCPServerConsole
             string hashedpass = BitConverter.ToString(hashedBytes).Replace("-", "").ToLower();
             return hashedpass;
         }
-        private static async Task<bool> SendResetPasswordEmail(string email, string newPassword)
+        private static async Task SendResetPasswordEmail(string email, string newPassword)
         {
             try
             {
-                using SmtpClient smtpClient = new("smtp.gmail.com", 587)
+                // Cấu hình SMTP Server
+                var smtpClient = new SmtpClient("smtp.gmail.com")
                 {
-                    Credentials = new NetworkCredential("finnlor123@gmail.com", "gnsx qqhr ffet rztj"),
-                    EnableSsl = true
+                    Port = 587,
+                    Credentials = new NetworkCredential("finnlor123@gmail.com", "gnsx qqhr ffet rztj"), // Email và mật khẩu ứng dụng
+                    EnableSsl = true,
                 };
 
-                using MailMessage mail = new()
+                var mail = new MailMessage
                 {
                     From = new MailAddress("finnlor123@gmail.com"),
                     Subject = "Password Reset Request",
@@ -257,12 +247,10 @@ namespace TCPServerConsole
 
                 mail.To.Add(email);
                 await smtpClient.SendMailAsync(mail);
-                return true;
             }
             catch (Exception ex)
             {
                 Console.WriteLine($"Failed to send email: {ex.Message}");
-                return false;
             }
         }
     }

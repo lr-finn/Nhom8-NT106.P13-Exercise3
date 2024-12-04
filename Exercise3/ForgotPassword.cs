@@ -45,8 +45,8 @@ namespace Exercise3
                 return;
             }
 
-            string email = TB_Email.Text;
-            string forgotpasswordCommand = $"FORGOTPASSWORD|{email}";
+            string email = TB_Email.Text.Trim();
+            string forgotpasswordCommand = $"RESETPASSWORD|{email}";
 
             //gửi yêu cầu đến TCP server
             string respond = SendRequestToServer(forgotpasswordCommand);
